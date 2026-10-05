@@ -114,3 +114,53 @@ function gameObject() {
         },
     };
 }
+
+
+
+function numPointsScored(playerName) {
+    //takes a player’s name and returns their points scored.
+    let homePlayer = gameObject().home.players;
+    let awayPlayer = gameObject().away.players;
+
+    const mergedAssign = Object.assign({},homePlayer,awayPlayer)
+    // console.log(mergedAssign);
+    // for (const key in obj) {
+    //     const value = obj[key];
+    // }
+    // let allPlayers =  { ...homePlayer, ...awayPlayer }
+    console.log(mergedAssign[playerName].points);
+    return mergedAssign[playerName].points;
+}
+// numPointsScored("Alan Anderson")
+
+
+function shoeSize(playerName) {
+    //Takes a player’s name as input and returns their shoe size.
+}
+
+function teamColors(teamName) {
+    //Takes a team name as input and returns an array of the team’s colors.
+}
+
+
+function teamNames() {
+    //Returns an array of both team names.
+}
+
+function playerNumbers(teamName) {
+    //Takes a team name as input and returns an array of all players’ 
+    // jersey numbers on that team.
+}
+
+
+function playerStats(playerName) {
+    // Takes a player’s name as input and returns an 
+    // object with all stats for that player.
+}
+
+function bigShoeRebounds() {
+    // Returns the number of rebounds for the player with the largest shoe size.
+    // Steps:
+    // Identify the player with the largest shoe size.
+    // Return that player’s rebounds.
+}
