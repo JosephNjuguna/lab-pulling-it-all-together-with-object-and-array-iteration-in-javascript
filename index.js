@@ -162,6 +162,13 @@ teamColors("Brooklyn Nets")
 
 function teamNames() {
     //Returns an array of both team names.
+    let teams=[]
+    for (const key in gameObject()) {
+        const element = gameObject()[key];
+        // console.log(element);
+        teams.push(element.teamName)
+    }
+    return teams;
 }
 
 function playerNumbers(teamName) {
