@@ -146,13 +146,16 @@ shoeSize("Jeff Adrien")
 
 function teamColors(teamName) {
     //Takes a team name as input and returns an array of the team’s colors.
+    let teamColors;
     for (const key in gameObject()) {
         const element = gameObject()[key];
         // console.log(element);
         if (element.teamName === teamName) {
+            teamColors = element.colors
             console.log(element.colors);
         }
     }
+    return teamColors;
     // console.log(homePlayer,awayPlayer);
     // const teamDataMerged = Object.assign({},homePlayer,awayPlayer)
     // console.log(teamDataMerged);
