@@ -122,7 +122,7 @@ function numPointsScored(playerName) {
     let homePlayer = gameObject().home.players;
     let awayPlayer = gameObject().away.players;
 
-    const mergedAssign = Object.assign({},homePlayer,awayPlayer)
+    const mergedAssign = Object.assign({}, homePlayer, awayPlayer)
     // console.log(mergedAssign);
     // for (const key in obj) {
     //     const value = obj[key];
@@ -137,11 +137,11 @@ function shoeSize(playerName) {
     //Takes a player’s name as input and returns their shoe size.
     let homePlayer = gameObject().home.players;//take each object of home players
     let awayPlayer = gameObject().away.players;//take each object of away players
-    const mergedAssign = Object.assign({},homePlayer,awayPlayer)//marge both players objects into single object
+    const mergedAssign = Object.assign({}, homePlayer, awayPlayer)//marge both players objects into single object
     console.log(mergedAssign[playerName].shoe);//log data just for confirmation
     return mergedAssign[playerName].shoe;//return the value found
 }
-shoeSize("Jeff Adrien")
+// shoeSize("Jeff Adrien")
 
 
 function teamColors(teamName) {
@@ -160,12 +160,12 @@ function teamColors(teamName) {
     // const teamDataMerged = Object.assign({},homePlayer,awayPlayer)
     // console.log(teamDataMerged);
 }
-teamColors("Charlotte Hornets")
-teamColors("Brooklyn Nets")
+// teamColors("Charlotte Hornets")
+// teamColors("Brooklyn Nets")
 
 function teamNames() {
     //Returns an array of both team names.
-    let teams=[]
+    let teams = []
     for (const key in gameObject()) {
         const element = gameObject()[key];
         // console.log(element);
@@ -177,7 +177,21 @@ function teamNames() {
 function playerNumbers(teamName) {
     //Takes a team name as input and returns an array of all players’ 
     // jersey numbers on that team.
+
+    let jerseyNumbers=[];
+    for (const key in gameObject()) {
+        const element = gameObject()[key];
+        if (element.teamName === teamName) {
+            // console.log(element.players);
+            Object.keys(element.players).forEach(key => {
+                jerseyNumbers.push(element.players[key].number)
+            })
+            console.log(jerseyNumbers);
+        }
+    }
+    return jerseyNumbers;
 }
+playerNumbers("Brooklyn Nets")
 
 
 function playerStats(playerName) {
@@ -186,11 +200,11 @@ function playerStats(playerName) {
 
     let homePlayer = gameObject().home.players;//take each object of home players
     let awayPlayer = gameObject().away.players;//take each object of away players
-    const mergedAssign = Object.assign({},homePlayer,awayPlayer)//marge both players objects into single object
+    const mergedAssign = Object.assign({}, homePlayer, awayPlayer)//marge both players objects into single object
     console.log(mergedAssign[playerName]);//log data just for confirmation
     return mergedAssign[playerName];//return the value found
 }
-playerStats("Jeff Adrien")
+//playerStats("Jeff Adrien")
 
 function bigShoeRebounds() {
     // Returns the number of rebounds for the player with the largest shoe size.
