@@ -133,7 +133,6 @@ function numPointsScored(playerName) {
 }
 // numPointsScored("Alan Anderson")
 
-
 function shoeSize(playerName) {
     //Takes a player’s name as input and returns their shoe size.
     let homePlayer = gameObject().home.players;//take each object of home players
@@ -142,14 +141,24 @@ function shoeSize(playerName) {
     console.log(mergedAssign[playerName].shoe);//log data just for confirmation
     return mergedAssign[playerName].shoe;//return the value found
 }
-// shoeSize("Alan Anderson")
+shoeSize("Jeff Adrien")
 
 
 function teamColors(teamName) {
     //Takes a team name as input and returns an array of the team’s colors.
-    
+    for (const key in gameObject()) {
+        const element = gameObject()[key];
+        // console.log(element);
+        if (element.teamName === teamName) {
+            console.log(element.colors);
+        }
+    }
+    // console.log(homePlayer,awayPlayer);
+    // const teamDataMerged = Object.assign({},homePlayer,awayPlayer)
+    // console.log(teamDataMerged);
 }
-
+teamColors("Charlotte Hornets")
+teamColors("Brooklyn Nets")
 
 function teamNames() {
     //Returns an array of both team names.
