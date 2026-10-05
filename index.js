@@ -183,7 +183,14 @@ function playerNumbers(teamName) {
 function playerStats(playerName) {
     // Takes a player’s name as input and returns an 
     // object with all stats for that player.
+
+    let homePlayer = gameObject().home.players;//take each object of home players
+    let awayPlayer = gameObject().away.players;//take each object of away players
+    const mergedAssign = Object.assign({},homePlayer,awayPlayer)//marge both players objects into single object
+    console.log(mergedAssign[playerName]);//log data just for confirmation
+    return mergedAssign[playerName];//return the value found
 }
+playerStats("Jeff Adrien")
 
 function bigShoeRebounds() {
     // Returns the number of rebounds for the player with the largest shoe size.
