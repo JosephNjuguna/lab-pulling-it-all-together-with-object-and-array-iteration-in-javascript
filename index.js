@@ -136,10 +136,18 @@ function numPointsScored(playerName) {
 
 function shoeSize(playerName) {
     //Takes a player’s name as input and returns their shoe size.
+    let homePlayer = gameObject().home.players;//take each object of home players
+    let awayPlayer = gameObject().away.players;//take each object of away players
+    const mergedAssign = Object.assign({},homePlayer,awayPlayer)//marge both players objects into single object
+    console.log(mergedAssign[playerName].shoe);//log data just for confirmation
+    return mergedAssign[playerName].shoe;//return the value found
 }
+// shoeSize("Alan Anderson")
+
 
 function teamColors(teamName) {
     //Takes a team name as input and returns an array of the team’s colors.
+    
 }
 
 
