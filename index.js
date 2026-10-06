@@ -177,8 +177,7 @@ function teamNames() {
 function playerNumbers(teamName) {
     //Takes a team name as input and returns an array of all players’ 
     // jersey numbers on that team.
-
-    let jerseyNumbers=[];
+    let jerseyNumbers = [];
     for (const key in gameObject()) {
         const element = gameObject()[key];
         if (element.teamName === teamName) {
@@ -191,7 +190,7 @@ function playerNumbers(teamName) {
     }
     return jerseyNumbers;
 }
-playerNumbers("Brooklyn Nets")
+// playerNumbers("Brooklyn Nets")
 
 
 function playerStats(playerName) {
@@ -207,8 +206,22 @@ function playerStats(playerName) {
 //playerStats("Jeff Adrien")
 
 function bigShoeRebounds() {
-    // Returns the number of rebounds for the player with the largest shoe size.
-    // Steps:
-    // Identify the player with the largest shoe size.
-    // Return that player’s rebounds.
+  const game = gameObject();
+  const players = [];
+  for (const teamKey in game) {
+    const teamPlayers = game[teamKey].players;
+    Object.keys(teamPlayers).forEach(name => {
+      players.push({
+        player: name,
+        shoenumber: teamPlayers[name].shoe,
+        rebounds: teamPlayers[name].rebounds
+      });
+    });
+  }
+  players.sort((a, b) => b.shoenumber - a.shoenumber);
+  return players[0].rebounds;
 }
+bigShoeRebounds()
+
+// let age =7, username="john", race="black"
+// console.log(`${username} ${age} ${race}`);
